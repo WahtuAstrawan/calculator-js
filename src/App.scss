@@ -1,0 +1,82 @@
+$btn-padding: 10px;
+$num-hover-bg: #fa6060;
+$operator-hover-bg: #58abfe;
+$btn-border: 1px #5c5c5c solid;
+$btn-hover-border: 1px #fc5b5b solid;
+$btn-font-size: 20px;
+
+body{
+  margin: 0;
+  padding-top: 8%;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  
+  .calculator{
+    background-color: lightgrey;
+    margin: 0 auto;
+    width: 300px;
+    padding: 2px;
+    
+    .display{
+      margin-bottom: 5px;
+      padding-right: 20px;
+      padding-top: 5px;
+      height: 40px;
+      text-align: right;
+      
+      span{
+        font-size: 30px;
+      }
+    }
+    
+    .buttons{
+      display: grid;
+      grid-template-columns: auto auto;
+      padding: 0 1px;
+      
+      .numbers {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        
+        button{
+          padding: $btn-padding;
+          border: $btn-border;
+          font-size: $btn-font-size;
+          &:hover{
+            background-color: $num-hover-bg;
+            border: $btn-hover-border;
+          }
+        }
+      }
+      
+      .operators{
+        display: grid;
+        grid-template-columns: auto;
+        grid-column-start: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        
+        button{
+          padding: $btn-padding;
+          border: $btn-border;
+          font-size: $btn-font-size;
+          &:hover{
+            background-color: $operator-hover-bg;
+            border: $btn-hover-border;
+          }
+          &:last-child{
+            padding: 1.1rem 0;
+          }
+        }  
+      }
+    }
+  }
+}
